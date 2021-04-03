@@ -1,11 +1,15 @@
 CC=g++
 CFLAGS= -std=gnu++11
 
-all: hello_graphics
+all: main multi
 
-hello_graphics:
+main:
 	mkdir -p build
-	$(CC) $(CFLAGS) -o build/hello_graphics hello_graphics.cpp
+	$(CC) $(CFLAGS) -o build/main main.cc
+
+multi:
+	mkdir -p build
+	$(CC) $(CFLAGS) -pthread -o build/multi multi.cc
 
 clean:
 	rm -rf build
