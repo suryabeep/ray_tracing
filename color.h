@@ -3,6 +3,9 @@
 
 #include "vec3.h"
 #include <iostream>
+#include <vector>
+
+using std::vector;
 
 void write_color(std::ostream &out, color pixel_color, int samples_per_pixel) {
     auto r = pixel_color.x();
@@ -20,7 +23,7 @@ void write_color(std::ostream &out, color pixel_color, int samples_per_pixel) {
         << static_cast<int>(256 * clamp(b, 0.0, 0.999)) << '\n';
 }
 
-void write_color_multi(int *pixel, int i, int j, color pixel_color, int samples_per_pixel) {
+void write_color_multi(vector<int> &pixel, int i, int j, color pixel_color, int samples_per_pixel) {
     auto r = pixel_color.x();
     auto g = pixel_color.y();
     auto b = pixel_color.z();
